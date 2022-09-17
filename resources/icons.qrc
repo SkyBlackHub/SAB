@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/remove.png</file>
+        <file>icons/remove_outline.png</file>
+        <file>icons/warning_triangle.png</file>
+        <file>icons/eye.png</file>
+        <file>icons/media_controls_play_small.png</file>
+        <file>icons/media_controls_stop_small.png</file>
+        <file>icons/folder_classic.png</file>
+        <file>icons/arrow_large_down.png</file>
+        <file>icons/download.png</file>
+        <file alias="icons/icon">icons/icon.ico</file>
+        <file alias="images/about">images/happy_rover_by_kirokaze_dahmfi7.gif</file>
+    </qresource>
+</RCC>

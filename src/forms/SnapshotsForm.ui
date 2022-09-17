@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SAB::SnapshotsForm</class>
+ <widget class="QWidget" name="SAB::SnapshotsForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>9</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Monitor clipboard:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Start">
+        <property name="text">
+         <string>Start</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../resources/icons.qrc">
+          <normaloff>:/icons/media_controls_play_small.png</normaloff>:/icons/media_controls_play_small.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Stop">
+        <property name="text">
+         <string>Stop</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../resources/icons.qrc">
+          <normaloff>:/icons/media_controls_stop_small.png</normaloff>:/icons/media_controls_stop_small.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Snap">
+        <property name="toolTip">
+         <string>Try to snap and save the current content of the clipboard.</string>
+        </property>
+        <property name="text">
+         <string>Snap!</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../resources/icons.qrc">
+          <normaloff>:/icons/arrow_large_down.png</normaloff>:/icons/arrow_large_down.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Destination path:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QWidget" name="widget_3" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="Path">
+        <property name="toolTip">
+         <string>Directory where to save snapshots.
+If left blank, files will be saved to the current user's pictures folder.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="PathBrowse">
+        <property name="toolTip">
+         <string>Browse folders...</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../resources/icons.qrc">
+          <normaloff>:/icons/folder_classic.png</normaloff>:/icons/folder_classic.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>File name pattern:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="Pattern">
+     <property name="toolTip">
+      <string>Pattern for the file naming.
+May contain variables (enclosed by %) and the directory separator.
+%stamp% - snapshot time stamp
+%title% - foreground window title, not safe, because may contain any characters
+%name% - name of the executable file (without .exe)
+%folder% - name of the directory where the executable file is located
+%auto% - auto name, tries to use the %title% first, if not safe, uses %folder%</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Image format settings:</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="1" column="5">
+          <widget class="QSpinBox" name="Compression">
+           <property name="toolTip">
+            <string>The compression rate of the PNG image as a percentage.
+The larger the value, the lower the size, but also the higher load.
+On weak systems, too high value can cause the queue overflow and freezing.
+It's not recommended to set values above 50% -
+the result difference is not significant, but the requirements increase very much.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QRadioButton" name="FormatPNG">
+           <property name="text">
+            <string>PNG</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Compression rate (%):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QRadioButton" name="FormatBMP">
+           <property name="text">
+            <string>BMP</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QRadioButton" name="FormatJPEG">
+           <property name="text">
+            <string>JPEG</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Quality (%):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QSpinBox" name="Quality">
+           <property name="toolTip">
+            <string>The quality of the compressed JPEG image as a percentage.
+The smaller the value, the lower the size of the result file, but the image quality is worse.</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Image save settings:</string>
+        </property>
+        <layout class="QFormLayout" name="formLayout_2">
+         <property name="horizontalSpacing">
+          <number>20</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Maximum save threads:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="MaximumSavers">
+           <property name="toolTip">
+            <string>The maximum number of simultaneously saving images.
+In case of overflow, the image will be postponed in the queue.
+On high end systems, you can increase this value, but moderately,
+so as not to get freezing and excessive load.</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Maximum queue size:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="MaximumQueue">
+           <property name="toolTip">
+            <string>The maximum number of images that can be postponed for further saving to the disk.
+If you get too large queue size at once, then your system cannot compress and save images fast enough.
+Try to reduce the compression rate to resolve this.
+Don't set too high this value, because it can lead to memory overflow.</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QTabWidget" name="FiltersTabs">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="ExcludeTab">
+      <attribute name="title">
+       <string>Exclude</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPlainTextEdit" name="Exclude">
+         <property name="toolTip">
+          <string>One or more filters by the path and name of the executable file.
+If there is a match, then this file will be ignored.
+Filters are separated by a new line and can be commented out with the symbol #.
+Examples:
+c:\Program Files\*
+#c:\Program Files (x86)\*
+c:\Windows\*
+firefox.exe </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="IncludeTab">
+      <attribute name="title">
+       <string>Include</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPlainTextEdit" name="Include">
+         <property name="toolTip">
+          <string>One or more filters by the path and name of the executable file.
+If there is no match, then this file will be ignored.
+Filters are separated by a new line and can be commented out with the symbol #.
+Examples:
+#c:\Tools\*
+c:\Games\*
+firefox.exe</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QWidget" name="widget_4" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="FiltersSubject">
+        <property name="placeholderText">
+         <string>Test filename against filters...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="FiltersTest">
+        <property name="text">
+         <string>Test</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QWidget" name="widget_5" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QCheckBox" name="UseTrigger">
+        <property name="toolTip">
+         <string>For automatic snapshots, a system event - clipboard update - is monitored.
+However, third-party programs can cause this event without even changing the clipboard content.
+Therefore, in order to avoid false operation, it's worth to check the clipboard only if the PrintScreen key was pressed.
+You can disable this option if, for example, you want to automatically save all the images sent to the clipboard.</string>
+        </property>
+        <property name="text">
+         <string>Use PrintScreen key as trigger</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="CropWindow">
+        <property name="toolTip">
+         <string>Try to crop the client area of the active window from the image.
+If Alt+PrintScreen is used, then there will be no cropping.</string>
+        </property>
+        <property name="text">
+         <string>Crop the client area of the window</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../resources/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
